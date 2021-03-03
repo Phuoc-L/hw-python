@@ -1,6 +1,6 @@
 import time
 
-def calculate_time(func, x):
+def calculate_time(func):
 	'''
 	Calculate the run time of the inputed function.
 
@@ -14,11 +14,14 @@ def calculate_time(func, x):
 	sting
 		The run time of the inputed function in seconds.
 	'''
-	a = time.time()
-	d = func(x)
-	b = time.time()
-	c = int(b - a)
-	print(f"Total time {c}")
-	return f"Total time {c}"
+	def inner():
+		x = time.time()
+		func()
+		print(f"Total time {int(time.time() - x)}")
+	return inner
+	
+@calculate_time
+def sleep():
+	time.sleep(2)
 
-calculate_time(time.sleep, 2)
+sleep()
