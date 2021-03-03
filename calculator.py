@@ -36,7 +36,9 @@ def calculator(number1, number2, operator):
 	elif(operator == "**"):
 		print(number1 ** number2)
 		return number1 ** number2
-
+	elif(operator == "//"):
+		print(int(number1 / number2))
+		return int(number1 / number2)
 
 def input_output():
 	'''
@@ -53,7 +55,7 @@ def input_output():
 		num1 = input("Enter the first number: ")
 		num2 = input("Enter the second number: ")
 		op = input("Enter the operation: ")
-		if (op != "+" and op != "-" and op != "*" and op != "/" and op != "**"):
+		if (op != "+" and op != "-" and op != "*" and op != "/" and op != "**" and op != "//"):
 			done = True
 			print("False")
 			return False
@@ -64,4 +66,4 @@ def input_output():
 			if (exit == 'y'):
 				done = True
 
-
+input_output()
