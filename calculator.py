@@ -55,6 +55,8 @@ def input_output():
 		op = input("Enter the operation: ")
 		if (op != "+" and op != "-" and op != "*" and op != "/" and op != "**"):
 			done = True
+			print("False")
+			return False
 		else:
 			calculator(num1, num2, op)
 			print(" ")
