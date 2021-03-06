@@ -21,7 +21,7 @@ def calculate_apr(principal, interest_rate, years):
 	boolean
 		False if parameters are invalid.
 	"""
-	if((isinstance(principal, float) or isinstance(principal, int)) and isinstance(interest_rate, float) and interest_rate > 0 and isinstance(years, int)):
+	if((isinstance(principal, float) or isinstance(principal, int)) and isinstance(interest_rate, float) and interest_rate > 0 and isinstance(years, int) and years > 0):
 		for i in range(years):
 			principal = principal * (1 + interest_rate)
 		print(principal)
@@ -29,4 +29,4 @@ def calculate_apr(principal, interest_rate, years):
 	print(False)
 	return False
 
-calculate_apr(100, -0.03, 3)
+calculate_apr(100, 0.03, -3)
